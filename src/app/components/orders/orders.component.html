@@ -1,0 +1,23 @@
+<section>
+    <table class="table text-center my-3 table-hover">
+        <thead>
+            <th>Order ID</th>
+            <th>Items</th>
+            <th>Total Price</th>
+            <th>Payment Method</th>
+            <th>Order Date</th>
+            <th>Order Details</th>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr *ngFor="let order of allOrders">
+                <td>{{order.OrderId}}</td>
+                <td>{{order.Products.length}}</td>
+                <td>{{getTotalOrderPrice(order)|currency}}</td>
+                <td>{{order.PaymentType}}</td>
+                <td>{{order.OrderDate|date}}</td>
+                <td><a [routerLink]="['/order-details',order.OrderId]" class="btn text-main"><i
+                            class="fa-solid fa-eye"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
