@@ -14,7 +14,6 @@ import Swal from 'sweetalert2';
 })
 export class ProductsComponent {
   allProducts: Product[] = []
-
   constructor(private _ProductsService: ProductsService) { }
 
   loadProducts() {
@@ -34,7 +33,6 @@ export class ProductsComponent {
       }
     });
   }
-
   async updateAlert(productId: number) {
     let { value: qty } = await Swal.fire({
       title: 'Update Quantity!',

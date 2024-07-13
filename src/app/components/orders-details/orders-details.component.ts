@@ -30,11 +30,7 @@ export class OrdersDetailsComponent {
 
 
 
-  ngOnInit(): void {
-    this.orderId = Number(this._ActivatedRoute.snapshot.params['id']);
-    this.loadOrderDetails();
-    this.loadCustomerDetails();
-  }
+
 
   private loadOrderDetails(): void {
     this._OrdersService.getOrder(this.orderId).subscribe({
@@ -82,5 +78,9 @@ export class OrdersDetailsComponent {
       }
     });
   }
-
+  ngOnInit(): void {
+    this.orderId = Number(this._ActivatedRoute.snapshot.params['id']);
+    this.loadOrderDetails();
+    this.loadCustomerDetails();
+  }
 }
