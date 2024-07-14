@@ -39,7 +39,7 @@ export class ProductsComponent {
       input: "number",
       confirmButtonText: 'OK'
     });
-    if (qty) this.updateQuantity(productId, qty)
+    if (qty && qty >= 0) this.updateQuantity(productId, qty)
   }
   ngOnInit() {
     this.loadProducts()

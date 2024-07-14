@@ -60,12 +60,12 @@ body {
         transition: transform 1s, opacity 1s;
         transform: translateY(100%);
         opacity: 0;
+
     }
 
     &:hover .btn {
         opacity: 1;
         transform: translateY(0%);
-
     }
 }
 
