@@ -29,9 +29,6 @@ export class OrdersDetailsComponent {
   ) { }
 
 
-
-
-
   private loadOrderDetails(): void {
     this._OrdersService.getOrder(this.orderId).subscribe({
       next: (response) => {
@@ -77,6 +74,13 @@ export class OrdersDetailsComponent {
         console.error('Failed to load customers', err);
       }
     });
+  }
+  // Method to add an order
+  addOrder(product: any) {
+    const order = {
+      ProductId: product.ProductId,
+      Quantity: product.Quantity,
+    }
   }
   ngOnInit(): void {
     this.orderId = Number(this._ActivatedRoute.snapshot.params['id']);
